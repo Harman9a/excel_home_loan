@@ -1,0 +1,104 @@
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+  <ul class="sidebar-nav" id="sidebar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        data-bs-target="#components-nav"
+        data-bs-toggle="collapse"
+        href="#"
+      >
+        <i class="bi bi-menu-button-wide"></i><span>Loan Application Data</span
+        ><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul
+        id="components-nav"
+        class="nav-content collapse show"
+        data-bs-parent="#sidebar-nav"
+      >
+        <li>
+          <a routerLink="applicant-data" class="active">
+            <i class="bi bi-circle"></i><span>Applicant Data</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="guarantor-data">
+            <i class="bi bi-circle"></i><span>Guarantor Data</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="loan-request">
+            <i class="bi bi-circle"></i
+            ><span>Project Cost and Loan Request</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- End Components Nav -->
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        data-bs-target="#forms-nav"
+        data-bs-toggle="collapse"
+        href="#"
+      >
+        <i class="bi bi-journal-text"></i><span>Loan Appraisal Data</span
+        ><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul
+        id="forms-nav"
+        class="nav-content collapse"
+        data-bs-parent="#sidebar-nav"
+      >
+        <li>
+          <a routerLink="net-worth">
+            <i class="bi bi-circle"></i><span>Income and Net Worth</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="client-vist">
+            <i class="bi bi-circle"></i><span>Client Visit Information</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="site-vist">
+            <i class="bi bi-circle"></i><span>Site Visit Information</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="risk-1">
+            <i class="bi bi-circle"></i><span>Risk Assessment Data - I</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="risk-2">
+            <i class="bi bi-circle"></i><span>Risk Assessment Data - II</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="add-info">
+            <i class="bi bi-circle"></i><span>Proposal Information</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="media-upload">
+            <i class="bi bi-circle"></i><span>Photos / Videos Upload</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- End Forms Nav -->
+
+    <!-- End Blank Page Nav -->
+  </ul>
+</aside>
+<!-- End Sidebar-->
