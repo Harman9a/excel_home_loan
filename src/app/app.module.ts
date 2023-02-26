@@ -20,6 +20,7 @@ import { MedisUploadComponent } from './Pages/medis-upload/medis-upload.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportGenComponent } from './report-gen/report-gen.component';
+import { ScoreComponent } from './Pages/score/score.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ReportGenComponent } from './report-gen/report-gen.component';
     AddInfoComponent,
     MedisUploadComponent,
     ReportGenComponent,
+    ScoreComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

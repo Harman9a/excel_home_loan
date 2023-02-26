@@ -27,6 +27,15 @@ export class RiskTwoComponent implements OnInit {
   mws_total_old = 0;
   total_score_end = 0;
 
+  s_mws1 = 0;
+  s_mws2 = 0;
+  s_mws3 = 0;
+  s_mws4 = 0;
+  s_mws5 = 0;
+  s_mws6 = 0;
+  s_mws_total = 0;
+
+
   a1 = '';
   a2 = '';
   a3 = '';
@@ -97,6 +106,7 @@ export class RiskTwoComponent implements OnInit {
       }
 
       this.mws1 = value * 3;
+      this.s_mws1 = value;
     }
     if (type == 2) {
       if (no == 1) {
@@ -124,6 +134,7 @@ export class RiskTwoComponent implements OnInit {
         this.b4 = 'activeOpt';
       }
       this.mws2 = value * 1;
+      this.s_mws2 = value;
     }
     if (type == 3) {
       if (no == 1) {
@@ -152,6 +163,7 @@ export class RiskTwoComponent implements OnInit {
       }
 
       this.mws3 = value * 1;
+      this.s_mws3 = value;
     }
     if (type == 4) {
       if (no == 1) {
@@ -235,6 +247,7 @@ export class RiskTwoComponent implements OnInit {
         this.d8 = 'activeOpt';
       }
       this.mws4 = value * 3;
+      this.s_mws4 = value;
     }
     if (type == 5) {
       if (no == 1) {
@@ -253,6 +266,7 @@ export class RiskTwoComponent implements OnInit {
         this.e3 = 'activeOpt';
       }
       this.mws5 = value * 2;
+      this.s_mws5 = value;
     }
     if (type == 6) {
       if (no == 1) {
@@ -271,6 +285,7 @@ export class RiskTwoComponent implements OnInit {
         this.f3 = 'activeOpt';
       }
       this.mws6 = value * 2;
+      this.s_mws6 = value;
     }
     this.mws_total =
       this.mws1 + this.mws2 + this.mws3 + this.mws4 + this.mws5 + this.mws6;
@@ -291,7 +306,14 @@ export class RiskTwoComponent implements OnInit {
       this.mws4 = result.mws4;
       this.mws5 = result.mws5;
       this.mws6 = result.mws6;
+      this.s_mws1 = result.s_mws1;
+      this.s_mws2 = result.s_mws2;
+      this.s_mws3 = result.s_mws3;
+      this.s_mws4 = result.s_mws4;
+      this.s_mws5 = result.s_mws5;
+      this.s_mws6 = result.s_mws6;
       this.mws_total = result.mws_total;
+      this.s_mws_total = result.s_mws_total;
       this.mws_total_old = result.mws_total_old;
       this.total_score_end = result.total_score_end;
 
@@ -343,6 +365,13 @@ export class RiskTwoComponent implements OnInit {
       mws5: this.mws5,
       mws6: this.mws6,
       mws_total: this.mws_total,
+      s_mws1: this.s_mws1,
+      s_mws2: this.s_mws2,
+      s_mws3: this.s_mws3,
+      s_mws4: this.s_mws4,
+      s_mws5: this.s_mws5,
+      s_mws6: this.s_mws6,
+      s_mws_total: this.s_mws_total,
       mws_total_old: this.mws_total_old,
       total_score_end: this.total_score_end,
       a1: this.a1,
@@ -393,7 +422,7 @@ export class RiskTwoComponent implements OnInit {
   }
 
   goNext() {
-    this.router.navigateByUrl('add-info/' + this.openId);
+    this.router.navigateByUrl('score/' + this.openId);
   }
 
   goBack() {

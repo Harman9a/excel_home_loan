@@ -129,6 +129,6 @@ export class AddInfoComponent implements OnInit {
     this.router.navigateByUrl('media-upload/' + this.openId);
   }
   goBack() {
-    this.router.navigateByUrl('risk-2/' + this.openId);
+    this.router.navigateByUrl('score/' + this.openId);
   }
 }

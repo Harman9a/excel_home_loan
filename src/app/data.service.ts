@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
   constructor(private http: HttpClient) {}
 
-  // baseurl = 'https://www.acramm.com/homeloan/admin/Api.php';
-  // mediaUrl = 'https://www.acramm.com/homeloan/admin/uploads/';
+  baseurl = 'https://www.acramm.com/homeloan/admin/Api.php';
+  mediaUrl = 'https://www.acramm.com/homeloan/admin/uploads/';
 
-  baseurl = 'http://localhost/Harman/Surinder/HomeLoan/admin/Api.php';
-  mediaUrl = 'http://localhost/Harman/Surinder/HomeLoan/admin/uploads/';
+  // baseurl = 'http://localhost/Harman/Surinder/HomeLoan/admin/Api.php';
+  // mediaUrl = 'http://localhost/Harman/Surinder/HomeLoan/admin/uploads/';
 
   getAppDataList(data: any) {
     return this.http.post(this.baseurl, data);

@@ -10,6 +10,7 @@ import { MedisUploadComponent } from './Pages/medis-upload/medis-upload.componen
 import { NetWorthComponent } from './Pages/net-worth/net-worth.component';
 import { RiskOneComponent } from './Pages/risk-one/risk-one.component';
 import { RiskTwoComponent } from './Pages/risk-two/risk-two.component';
+import { ScoreComponent } from './Pages/score/score.component';
 import { SiteVistComponent } from './Pages/site-vist/site-vist.component';
 import { ReportGenComponent } from './report-gen/report-gen.component';
 
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'risk-2/:id',
     component: RiskTwoComponent,
+  },
+  {
+    path: 'score/:id',
+    component: ScoreComponent,
   },
   {
     path: 'add-info/:id',

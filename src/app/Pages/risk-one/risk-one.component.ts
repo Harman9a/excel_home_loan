@@ -339,6 +339,7 @@ export class RiskOneComponent implements OnInit {
       this.s_mws5 = result.s_mws5;
       this.s_mws6 = result.s_mws6;
       this.mws_total = result.mws_total;
+      this.s_mws_total = result.s_mws_total;
       this.a1 = result.a1;
       this.a2 = result.a2;
       this.a3 = result.a3;
@@ -385,6 +386,7 @@ export class RiskOneComponent implements OnInit {
       s_mws5: this.s_mws5,
       s_mws6: this.s_mws6,
       mws_total: this.mws_total,
+      s_mws_total: this.s_mws_total,
       a1: this.a1,
       a2: this.a2,
       a3: this.a3,

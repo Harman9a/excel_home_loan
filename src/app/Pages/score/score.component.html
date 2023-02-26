@@ -1,0 +1,125 @@
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Risk Assessment Data - II</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Risk Assessment Data - II</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center">
+              Management Assessment Score : Guidance Sheet
+            </h5>
+            <div
+              class="row mx-2 my-1"
+              style="text-align: center; font-size: 14px"
+            >
+              <div class="col-12 my-5">
+                <table id="customers">
+                  <tr>
+                    <th>Safety Level Score</th>
+                    <th>Client Safety Level</th>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 80 and More.</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      High
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 70 and above but < 80</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Good
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 60 and above but < 70</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Moderate
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 50 and above but < 60</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Average
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Safety Client Score is < 50</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Poor
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-12 my-5">
+                <table id="customers">
+                  <tr>
+                    <th></th>
+                    <th>Maximum</th>
+                    <th>Client Score</th>
+                  </tr>
+                  <tr>
+                    <td>Personal Credentials Score :</td>
+                    <td>{{ mws_total_old }}</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      {{ mws_total_old }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Credit Credentials Score :</td>
+                    <td>{{ mws_total }}</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      {{ mws_total }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Management Assessment Score :</td>
+                    <td>20</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      <input
+                        type="number"
+                        [(ngModel)]="m_score"
+                        style="width: 8%"
+                        (change)="updateTotal()"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Total Score</td>
+                    <td>{{ total_score_end }}</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      {{ total_score_end2 }}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-primary" (click)="goBack()">
+                Back
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary mx-3"
+                (click)="handleSubmit()"
+              >
+                Save & Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- End #main -->
