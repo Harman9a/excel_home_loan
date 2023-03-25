@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-risk-two',
@@ -34,7 +34,6 @@ export class RiskTwoComponent implements OnInit {
   s_mws5 = 0;
   s_mws6 = 0;
   s_mws_total = 0;
-
 
   a1 = '';
   a2 = '';
@@ -414,8 +413,8 @@ export class RiskTwoComponent implements OnInit {
         icon: 'success',
         title: 'Your work has been saved',
         showConfirmButton: false,
-        timer: 1500
-      })
+        timer: 1500,
+      });
       this.goNext();
       console.log(response);
     });

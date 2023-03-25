@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-loan-request',
@@ -63,39 +63,41 @@ export class LoanRequestComponent implements OnInit {
     data.append('action', 'getSingleDataLoan');
 
     this.ds.submitAppData(data).subscribe((response: any) => {
-      let data = response[0];
-      let dataJson = JSON.parse(data.dataJson);
+      if (response != null) {
+        let data = response[0];
+        let dataJson = JSON.parse(data.dataJson);
 
-      this.am1 = dataJson[0].cost;
-      this.d1 = dataJson[0].detail;
+        this.am1 = dataJson[0].cost;
+        this.d1 = dataJson[0].detail;
 
-      this.am2 = dataJson[1].cost;
-      this.d2 = dataJson[1].detail;
+        this.am2 = dataJson[1].cost;
+        this.d2 = dataJson[1].detail;
 
-      this.am3 = dataJson[2].cost;
-      this.d3 = dataJson[2].detail;
+        this.am3 = dataJson[2].cost;
+        this.d3 = dataJson[2].detail;
 
-      this.am4 = dataJson[3].cost;
-      this.d4 = dataJson[3].detail;
+        this.am4 = dataJson[3].cost;
+        this.d4 = dataJson[3].detail;
 
-      this.am5 = dataJson[4].cost;
-      this.d5 = dataJson[4].detail;
+        this.am5 = dataJson[4].cost;
+        this.d5 = dataJson[4].detail;
 
-      this.am6 = dataJson[5].cost;
-      this.d6 = dataJson[5].detail;
+        this.am6 = dataJson[5].cost;
+        this.d6 = dataJson[5].detail;
 
-      this.am7 = dataJson[6].cost;
-      this.d7 = dataJson[6].detail;
+        this.am7 = dataJson[6].cost;
+        this.d7 = dataJson[6].detail;
 
-      this.total = data.total;
-      this.appMargin = data.appMargin;
-      this.appMarginD = data.appMarginD;
-      this.marginAge = data.marginAge;
-      this.loanRequest = data.loanRequest;
-      this.loanRequestD = data.loanRequestD;
+        this.total = data.total;
+        this.appMargin = data.appMargin;
+        this.appMarginD = data.appMarginD;
+        this.marginAge = data.marginAge;
+        this.loanRequest = data.loanRequest;
+        this.loanRequestD = data.loanRequestD;
 
-      this.propertyD = data.propertyD;
-      this.comment = data.comment;
+        this.propertyD = data.propertyD;
+        this.comment = data.comment;
+      }
     });
   }
 
@@ -172,8 +174,8 @@ export class LoanRequestComponent implements OnInit {
         icon: 'success',
         title: 'Your work has been saved',
         showConfirmButton: false,
-        timer: 1500
-      })
+        timer: 1500,
+      });
       this.goNext();
     });
   }

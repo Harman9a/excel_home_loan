@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-net-worth',
@@ -64,7 +64,7 @@ export class NetWorthComponent implements OnInit {
         this.c_months = result2.c_months;
         this.c_emi = result2.c_emi;
 
-        this.ammountPEMI =  this.c_emi;
+        this.ammountPEMI = this.c_emi;
         this.EMI1 = result2.EMI1;
         this.EMI2 = result2.EMI2;
         this.IIR1 = result2.IIR1;
@@ -106,8 +106,8 @@ export class NetWorthComponent implements OnInit {
         icon: 'success',
         title: 'Your work has been saved',
         showConfirmButton: false,
-        timer: 1500
-      })
+        timer: 1500,
+      });
       this.goNext();
       console.log(response);
     });

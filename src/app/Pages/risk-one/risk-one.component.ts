@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
-import Swal from 'sweetalert2'
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-risk-one',
@@ -429,9 +428,9 @@ export class RiskOneComponent implements OnInit {
         icon: 'success',
         title: 'Your work has been saved',
         showConfirmButton: false,
-        timer: 1500
-      })
-      this.goNext()
+        timer: 1500,
+      });
+      this.goNext();
       console.log(response);
     });
   }

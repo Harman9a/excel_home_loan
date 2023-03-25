@@ -1,12 +1,12 @@
 <main id="main" class="main">
   <div class="pagetitle">
     <h1>Guarantor Data</h1>
-    <nav>
+    <!-- <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Guarantor Data</li>
       </ol>
-    </nav>
+    </nav> -->
   </div>
   <!-- End Page Title -->
 
@@ -142,16 +142,28 @@
                       id="inputAddress"
                     />
                   </div>
-                  <div class="col-12">
+                  <div class="col-6">
                     <label for="inputAddress" class="form-label"
                       >Applicant's Photo</label
                     >
                     <input
-                      [(ngModel)]="a1_photo"
                       type="file"
                       class="form-control"
                       id="inputAddress"
+                      (change)="handleFileInput($event.target, 1)"
                     />
+                  </div>
+                  <div class="col-6" style="text-align: center">
+                    <img [src]="a1_photo" style="width: 200px" />
+                  </div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      (click)="handleSubmit()"
+                    >
+                      Save Guarantor 1
+                    </button>
                   </div>
                 </div>
               </div>
@@ -248,23 +260,35 @@
                       id="inputAddress"
                     />
                   </div>
-                  <div class="col-12">
+                  <div class="col-6">
                     <label for="inputAddress" class="form-label"
                       >Applicant's Photo</label
                     >
                     <input
-                      [(ngModel)]="a2_photo"
+                      (change)="handleFileInput($event.target, 2)"
                       type="file"
                       class="form-control"
                       id="inputAddress"
                     />
+                  </div>
+                  <div class="col-6" style="text-align: center">
+                    <img [src]="a2_photo" style="width: 200px" />
+                  </div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      (click)="handleSubmit()"
+                    >
+                      Save Guarantor 2
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
             <!-- End Default Tabs -->
             <div class="row mx-1 my-3">
-              <div class="col-12">
+              <!-- <div class="col-12">
                 <label for="inputAddress" class="form-label"
                   >Applicantion Date</label
                 >
@@ -274,7 +298,7 @@
                   class="form-control"
                   id="inputAddress"
                 />
-              </div>
+              </div> -->
               <div class="col-12 mt-3">
                 <button
                   type="submit"
@@ -286,9 +310,9 @@
                 <button
                   type="submit"
                   class="btn btn-primary mx-3"
-                  (click)="handleSubmit()"
+                  (click)="goNext()"
                 >
-                  Save & Next
+                  Next
                 </button>
               </div>
             </div>

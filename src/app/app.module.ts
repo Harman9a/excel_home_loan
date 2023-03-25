@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportGenComponent } from './report-gen/report-gen.component';
 import { ScoreComponent } from './Pages/score/score.component';
+// import { NgxSpinnerModule } from 'ngx-spinner';
+// import {} from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,13 @@ import { ScoreComponent } from './Pages/score/score.component';
     ReportGenComponent,
     ScoreComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    // NgxSpinnerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

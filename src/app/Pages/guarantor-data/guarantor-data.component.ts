@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-guarantor-data',
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
 })
 export class GuarantorDataComponent implements OnInit {
   constructor(
-    private ds: DataService,
+    public ds: DataService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -26,7 +26,8 @@ export class GuarantorDataComponent implements OnInit {
   a1_nrc = '';
   a1_phone = '';
   a1_passport = '';
-  a1_photo = '';
+  a1_photo: any = '';
+  a1_photo_data: any;
 
   a2_name = '';
   a2_fName = '';
@@ -36,7 +37,8 @@ export class GuarantorDataComponent implements OnInit {
   a2_nrc = '';
   a2_phone = '';
   a2_passport = '';
-  a2_photo = '';
+  a2_photo: any = '';
+  a2_photo_data: any;
 
   app_date = '';
 
@@ -64,7 +66,7 @@ export class GuarantorDataComponent implements OnInit {
       this.a1_nrc = response[0].a1_nrc;
       this.a1_phone = response[0].a1_phone;
       this.a1_passport = response[0].a1_passport;
-      // this.a1_photo = response[0].a1_phone;
+      this.a1_photo = this.ds.mediaUrl + response[0].a1_photo;
 
       this.a2_name = response[0].a2_name;
       this.a2_fName = response[0].a2_fName;
@@ -74,10 +76,37 @@ export class GuarantorDataComponent implements OnInit {
       this.a2_nrc = response[0].a2_nrc;
       this.a2_phone = response[0].a2_phone;
       this.a2_passport = response[0].a2_passport;
-      // this.a2_photo = response[0].a2_photo;
+      this.a2_photo = this.ds.mediaUrl + response[0].a2_photo;
 
       this.app_date = response[0].app_date;
     });
+  }
+
+  handleFileInput(files: any, no: number) {
+    if (no == 1) {
+      this.a1_photo_data = files.files.item(0);
+
+      if (files.files && files.files[0]) {
+        var reader = new FileReader();
+        reader.readAsDataURL(files.files[0]); // read file as data url
+        reader.onload = (event: any) => {
+          // called once readAsDataURL is completed
+          this.a1_photo = event.target.result;
+        };
+      }
+    }
+    if (no == 2) {
+      this.a2_photo_data = files.files.item(0);
+
+      if (files.files && files.files[0]) {
+        var reader = new FileReader();
+        reader.readAsDataURL(files.files[0]); // read file as data url
+        reader.onload = (event: any) => {
+          // called once readAsDataURL is completed
+          this.a2_photo = event.target.result;
+        };
+      }
+    }
   }
 
   handleSubmit() {
@@ -91,7 +120,7 @@ export class GuarantorDataComponent implements OnInit {
     data.append('a1_nrc', this.a1_nrc);
     data.append('a1_phone', this.a1_phone);
     data.append('a1_passport', this.a1_passport);
-    data.append('a1_photo', this.a1_photo);
+    data.append('a1_photo', this.a1_photo_data);
 
     data.append('a2_name', this.a2_name);
     data.append('a2_fName', this.a2_fName);
@@ -101,20 +130,22 @@ export class GuarantorDataComponent implements OnInit {
     data.append('a2_nrc', this.a2_nrc);
     data.append('a2_phone', this.a2_phone);
     data.append('a2_passport', this.a2_passport);
-    data.append('a2_photo', this.a2_photo);
+    data.append('a2_photo', this.a2_photo_data);
 
     data.append('app_date', this.app_date);
     data.append('action', 'submit-guar-data');
 
     this.ds.submitAppData(data).subscribe((response: any) => {
+      console.log(response);
       Swal.fire({
         position: 'top-end',
         icon: 'success',
         title: 'Your work has been saved',
         showConfirmButton: false,
-        timer: 1500
-      })
-      this.goNext();
+        timer: 1500,
+      });
+      // window.location.reload();
+      // this.goNext();
     });
   }
 
@@ -122,7 +153,7 @@ export class GuarantorDataComponent implements OnInit {
     this.router.navigateByUrl('loan-request/' + this.openId);
   }
 
-  goBack(){
+  goBack() {
     this.router.navigateByUrl('applicant-data/' + this.openId);
   }
 }

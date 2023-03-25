@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-info',
@@ -43,9 +43,6 @@ export class AddInfoComponent implements OnInit {
       }
     });
   }
-
-
-  
 
   handleUpdate(value: number, type: number, no: number) {}
 
@@ -113,15 +110,15 @@ export class AddInfoComponent implements OnInit {
     data.append('JsonData', JSON.stringify(JsonData));
 
     this.ds.submitAppData(data).subscribe((response: any) => {
-      // Swal.fire({
-      //   position: 'top-end',
-      //   icon: 'success',
-      //   title: 'Your work has been saved',
-      //   showConfirmButton: false,
-      //   timer: 1500
-      // })
-      // this.goNext()
-      console.log(response);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      this.goNext();
+      // console.log(response);
     });
   }
 

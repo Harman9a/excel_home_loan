@@ -25,15 +25,16 @@ export class DashbordComponent implements OnInit {
   }
 
   openData(id: any) {
+    localStorage.setItem('activeId', id);
     this.router.navigateByUrl('applicant-data/' + id);
   }
 
-  deleteAcc(id:any){
+  deleteAcc(id: any) {
     let data = new FormData();
     data.append('action', 'deleteAppDataList');
     data.append('id', id);
     this.ds.getAppDataList(data).subscribe((response: any) => {
-      console.log(response)
+      console.log(response);
       this.getData();
     });
   }

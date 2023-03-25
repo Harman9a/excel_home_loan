@@ -1,12 +1,12 @@
 <main id="main" class="main">
   <div class="pagetitle">
     <h1>Applicant Data</h1>
-    <nav>
+    <!-- <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Applicant Data</li>
       </ol>
-    </nav>
+    </nav> -->
   </div>
   <!-- End Page Title -->
 
@@ -17,6 +17,19 @@
           <div class="card-body">
             <h5 class="card-title">Applicant Data</h5>
 
+            <div class="row mb-4">
+              <div class="col-12">
+                <label for="inputAddress" class="form-label"
+                  >Applicantion Date</label
+                >
+                <input
+                  type="date"
+                  [(ngModel)]="app_date"
+                  class="form-control"
+                  id="inputAddress"
+                />
+              </div>
+            </div>
             <!-- Default Tabs -->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
@@ -55,7 +68,7 @@
                 role="tabpanel"
                 aria-labelledby="home-tab"
               >
-                <div class="row g-3 mx-2 my-1">
+                <div class="row g-3 mx-2 my-1" style="align-items: center">
                   <div class="col-12">
                     <label for="inputNanme4" class="form-label"
                       >Applicant's Full Name</label
@@ -142,16 +155,28 @@
                       id="inputAddress"
                     />
                   </div>
-                  <div class="col-12">
+                  <div class="col-6">
                     <label for="inputAddress" class="form-label"
                       >Applicant's Photo</label
                     >
                     <input
-                      [(ngModel)]="a1_photo"
+                      (change)="handleFileInput($event.target, 1)"
                       type="file"
                       class="form-control"
                       id="inputAddress"
                     />
+                  </div>
+                  <div class="col-6" style="text-align: center">
+                    <img [src]="a1_photo" style="width: 200px" />
+                  </div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      (click)="handleSubmit()"
+                    >
+                      Save Applicant 1
+                    </button>
                   </div>
                 </div>
               </div>
@@ -248,33 +273,34 @@
                       id="inputAddress"
                     />
                   </div>
-                  <div class="col-12">
+                  <div class="col-6">
                     <label for="inputAddress" class="form-label"
                       >Applicant's Photo</label
                     >
                     <input
-                      [(ngModel)]="a2_photo"
                       type="file"
                       class="form-control"
                       id="inputAddress"
+                      (change)="handleFileInput($event.target, 2)"
                     />
+                  </div>
+                  <div class="col-6" style="text-align: center">
+                    <img [src]="a2_photo" style="width: 200px" />
+                  </div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      (click)="handleSubmit()"
+                    >
+                      Save Applicant 2
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
             <!-- End Default Tabs -->
             <div class="row mx-1 my-3">
-              <div class="col-12">
-                <label for="inputAddress" class="form-label"
-                  >Applicantion Date</label
-                >
-                <input
-                  type="date"
-                  [(ngModel)]="app_date"
-                  class="form-control"
-                  id="inputAddress"
-                />
-              </div>
               <div class="col-12 mt-3">
                 <button
                   type="submit"
@@ -286,9 +312,9 @@
                 <button
                   type="submit"
                   class="btn btn-primary mx-3"
-                  (click)="handleSubmit()"
+                  (click)="goNext()"
                 >
-                  Save & Next
+                  Next
                 </button>
               </div>
             </div>
@@ -299,3 +325,4 @@
   </section>
 </main>
 <!-- End #main -->
+<!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->

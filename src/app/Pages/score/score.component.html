@@ -1,12 +1,12 @@
 <main id="main" class="main">
   <div class="pagetitle">
     <h1>Risk Assessment Data - II</h1>
-    <nav>
+    <!-- <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Risk Assessment Data - II</li>
       </ol>
-    </nav>
+    </nav> -->
   </div>
   <!-- End Page Title -->
 
@@ -22,44 +22,6 @@
               class="row mx-2 my-1"
               style="text-align: center; font-size: 14px"
             >
-              <div class="col-12 my-5">
-                <table id="customers">
-                  <tr>
-                    <th>Safety Level Score</th>
-                    <th>Client Safety Level</th>
-                  </tr>
-                  <tr>
-                    <td>If Client Safety Score is 80 and More.</td>
-                    <td style="font-weight: bold; font-size: 15px" colspan="6">
-                      High
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>If Client Safety Score is 70 and above but < 80</td>
-                    <td style="font-weight: bold; font-size: 15px" colspan="6">
-                      Good
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>If Client Safety Score is 60 and above but < 70</td>
-                    <td style="font-weight: bold; font-size: 15px" colspan="6">
-                      Moderate
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>If Client Safety Score is 50 and above but < 60</td>
-                    <td style="font-weight: bold; font-size: 15px" colspan="6">
-                      Average
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>If Safety Client Score is < 50</td>
-                    <td style="font-weight: bold; font-size: 15px" colspan="6">
-                      Poor
-                    </td>
-                  </tr>
-                </table>
-              </div>
               <div class="col-12 my-5">
                 <table id="customers">
                   <tr>
@@ -98,6 +60,44 @@
                     <td>{{ total_score_end }}</td>
                     <td style="font-weight: bold; font-size: 15px" colspan="6">
                       {{ total_score_end2 }}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-12 my-5">
+                <table id="customers">
+                  <tr>
+                    <th>Safety Level Score</th>
+                    <th>Client Safety Level</th>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 80 and More.</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      High
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 70 and above but < 80</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Good
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 60 and above but < 70</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Moderate
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Client Safety Score is 50 and above but < 60</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Average
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>If Safety Client Score is < 50</td>
+                    <td style="font-weight: bold; font-size: 15px" colspan="6">
+                      Poor
                     </td>
                   </tr>
                 </table>

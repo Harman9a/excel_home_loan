@@ -1,12 +1,12 @@
 <main id="main" class="main">
   <div class="pagetitle">
     <h1>Risk Assessment Data - I</h1>
-    <nav>
+    <!-- <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Risk Assessment Data - I</li>
       </ol>
-    </nav>
+    </nav> -->
   </div>
 
   <section class="section">
@@ -205,12 +205,12 @@
                   <td
                     colspan="2"
                     [class]="'selectable ' + c1"
-                    (click)="handleUpdate(3, 3, 1)"
+                    (click)="handleUpdate(2, 3, 1)"
                   >
                     A. Applicant's present combined worth is estimated at More
-                    than 2 times of the proposed loan amount.
+                    than 1.50 times of the proposed loan amount.
                   </td>
-                  <td>3</td>
+                  <td>2</td>
                   <td rowspan="5">1</td>
                   <td rowspan="5">{{ mws3 }}</td>
                   <td rowspan="5" class="finAnaIptTd">{{ s_mws3 }}</td>
@@ -221,34 +221,22 @@
                   <td
                     colspan="2"
                     [class]="'selectable ' + c2"
-                    (click)="handleUpdate(2.5, 3, 2)"
+                    (click)="handleUpdate(1.75, 3, 2)"
                   >
-                    B. Applicant's present combined worth is estimated at
-                    between 1.50 to 2 times of the proposed loan amount.
+                    B. Applicant's present combined worth is estimated at 1 and
+                    More But Less than 1.50 times of the proposed loan amount.
                   </td>
-                  <td>2.5</td>
+                  <td>1.75</td>
                 </tr>
                 <tr>
                   <td></td>
                   <td
                     colspan="2"
                     [class]="'selectable ' + c3"
-                    (click)="handleUpdate(2, 3, 3)"
+                    (click)="handleUpdate(1.5, 3, 3)"
                   >
-                    C. Applicant's present combined worth is estimated between 1
-                    to 1.50 times of the proposed loan amount.
-                  </td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td
-                    colspan="2"
-                    [class]="'selectable ' + c4"
-                    (click)="handleUpdate(1.5, 3, 4)"
-                  >
-                    D. Applicant's present combined worth is estimated at
-                    between 0.50 to 1 time of the proposed loan amount.
+                    C. Applicant's present combined worth is estimated at 0.75
+                    and More but Less than 1 of the proposed loan amount.
                   </td>
                   <td>1.5</td>
                 </tr>
@@ -256,13 +244,26 @@
                   <td></td>
                   <td
                     colspan="2"
+                    [class]="'selectable ' + c4"
+                    (click)="handleUpdate(1.25, 3, 4)"
+                  >
+                    D. Applicant's present combined worth is estimated at 0.25
+                    and More but Less than 0.50 time of the proposed loan
+                    amount.
+                  </td>
+                  <td>1.25</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td
+                    colspan="2"
                     [class]="'selectable ' + c5"
-                    (click)="handleUpdate(1, 3, 5)"
+                    (click)="handleUpdate(0.5, 3, 5)"
                   >
                     E. Applicant's present combined worth is estimated at Less
-                    than 0.50 time of the proposed loan amount.
+                    than 0.25 time of the proposed loan amount.
                   </td>
-                  <td>1</td>
+                  <td>0.5</td>
                 </tr>
                 <tr>
                   <td>4</td>
@@ -381,12 +382,12 @@
                   <td
                     colspan="2"
                     [class]="'selectable ' + f1"
-                    (click)="handleUpdate(4, 6, 1)"
+                    (click)="handleUpdate(3, 6, 1)"
                   >
                     A. Guarantors are reported to be HIGHLY respectable and
                     honest persons.
                   </td>
-                  <td>4</td>
+                  <td>3</td>
                   <td rowspan="3">1</td>
                   <td rowspan="3">{{ mws6 }}</td>
                   <td rowspan="3" class="finAnaIptTd">{{ s_mws6 }}</td>
@@ -397,12 +398,12 @@
                   <td
                     colspan="2"
                     [class]="'selectable ' + f2"
-                    (click)="handleUpdate(3, 6, 2)"
+                    (click)="handleUpdate(2, 6, 2)"
                   >
                     B. Guarantors are reported to be GENERALLY respectable and
                     honest persons.
                   </td>
-                  <td>3</td>
+                  <td>2</td>
                 </tr>
                 <tr>
                   <td></td>
@@ -422,13 +423,9 @@
                 </tr>
               </table>
             </div>
-          
+
             <div class="col-12 mt-3">
-              <button
-                type="submit"
-                class="btn btn-primary"
-                (click)="goBack()"
-              >
+              <button type="submit" class="btn btn-primary" (click)="goBack()">
                 Back
               </button>
               <button

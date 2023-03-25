@@ -2,12 +2,12 @@
   <div class="pagetitle row" style="align-items: center">
     <div class="col">
       <h1>Dashboard</h1>
-      <nav>
+      <!-- <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-      </nav>
+      </nav> -->
     </div>
     <div class="col" style="text-align: right">
       <button
@@ -30,9 +30,9 @@
           <div class="col-12">
             <div class="card recent-sales overflow-auto">
               <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"
+                <!-- <a class="icon" href="#" data-bs-toggle="dropdown"
                   ><i class="bi bi-three-dots"></i
-                ></a>
+                ></a> -->
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                   <li class="dropdown-header text-start">
                     <h6>Filter</h6>
@@ -53,7 +53,7 @@
                       <th scope="col">#</th>
                       <th scope="col">Applicant Name</th>
                       <th scope="col">Applicant Father Name</th>
-                      <th scope="col">Applicant Phone</th>
+                      <!-- <th scope="col">Applicant Phone</th> -->
                       <th scope="col">Status</th>
                       <th scope="col"></th>
                     </tr>
@@ -65,7 +65,7 @@
                       </th>
                       <td>{{ i.a1_name }}</td>
                       <td>{{ i.a1_fName }}</td>
-                      <td>{{ i.a1_phone }}</td>
+                      <!-- <td>{{ i.a1_phone }}</td> -->
                       <td><span class="badge bg-warning">Pending</span></td>
                       <td>
                         <i
@@ -73,10 +73,8 @@
                           style="font-size: 25px; cursor: pointer; color: green"
                           (click)="openData(i.id)"
                         ></i>
-                      </td>
-                      <td>
                         <i
-                          class="bx bxs-trash-alt"
+                          class="bx bxs-trash-alt mx-2"
                           style="font-size: 25px; cursor: pointer; color: red"
                           (click)="deleteAcc(i.id)"
                         ></i>

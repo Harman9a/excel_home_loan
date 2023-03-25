@@ -1,12 +1,12 @@
 <main id="main" class="main">
   <div class="pagetitle">
     <h1>Income and Net Worth</h1>
-    <nav>
+    <!-- <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Income and Net Worth</li>
       </ol>
-    </nav>
+    </nav> -->
   </div>
   <!-- End Page Title -->
 
@@ -27,6 +27,7 @@
                   id="inputNanme4"
                   [(ngModel)]="c_loanAmount"
                   (change)="updateTotal()"
+                  disabled
                 />
               </div>
               <div class="col-6 mb-3">Interest Rate</div>
@@ -183,8 +184,8 @@
                   id="inputNanme4"
                 />
               </div>
-              <div class="col-3 mb-3">Loan Amount</div>
-              <div class="col-3 mb-3">
+              <div class="col-3 mb-3" style="display: none">Loan Amount</div>
+              <div class="col-3 mb-3" style="display: none">
                 <input
                   [(ngModel)]="loanAmmount"
                   (change)="updateTotal()"
@@ -194,7 +195,7 @@
                   id="inputNanme4"
                 />
               </div>
-              <div class="col-3 mb-3">Net Worth / Loan Amount Ratio</div>
+              <div class="col-9 mb-3">Net Worth / Loan Amount Ratio</div>
               <div class="col-3 mb-3">
                 <input
                   [(ngModel)]="loanAmountRatio"
